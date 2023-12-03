@@ -62,6 +62,12 @@ export class MainUpdate {
 
       let message = '';
 
+      if (!books.length) {
+        ctx.reply('Мы ничего не нашли по вашему запросу');
+
+        return;
+      }
+
       for (const { id, archiveName, authors, genres, title } of books) {
         const authorsMessage = getAuthorsAsString(authors);
 
